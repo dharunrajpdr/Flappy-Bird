@@ -32,7 +32,9 @@ function App() {
   const [started, setStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
-  const [best, setBest] = useState(() => Number(localStorage.getItem("flappy-best") || 0));
+  const [best, setBest] = useState(() =>
+    Number(localStorage.getItem("flappy-best") || 0)
+  );
 
   const resetGame = useCallback(() => {
     gameRef.current = {
@@ -42,6 +44,7 @@ function App() {
       score: 0,
     };
     pipeTimerRef.current = 0;
+    lastTimeRef.current = 0;
     setScore(0);
     setGameOver(false);
   }, []);
@@ -59,7 +62,9 @@ function App() {
       setStarted(true);
     }
 
-    if (gameRef.current) gameRef.current.velocity = FLAP;
+    if (gameRef.current) {
+      gameRef.current.velocity = FLAP;
+    }
   }, [gameOver, resetGame, started]);
 
   useEffect(() => {
@@ -81,7 +86,6 @@ function App() {
 
     canvas.width = WIDTH * dpr;
     canvas.height = HEIGHT * dpr;
-    canvas.style.aspectRatio = WIDTH + "/" + HEIGHT;
     ctx.scale(dpr, dpr);
 
     const drawBackground = () => {
@@ -99,7 +103,13 @@ function App() {
       ]) {
         ctx.beginPath();
         ctx.arc(cloud[0], cloud[1], cloud[2], 0, Math.PI * 2);
-        ctx.arc(cloud[0] + 25, cloud[1] + 5, cloud[2] * 0.75, 0, Math.PI * 2);
+        ctx.arc(
+          cloud[0] + 25,
+          cloud[1] + 5,
+          cloud[2] * 0.75,
+          0,
+          Math.PI * 2
+        );
         ctx.fill();
       }
     };
@@ -147,6 +157,7 @@ function App() {
       ctx.beginPath();
       ctx.arc(7, -8, 6, 0, Math.PI * 2);
       ctx.fill();
+
       ctx.fillStyle = "#222";
       ctx.beginPath();
       ctx.arc(9, -8, 2.5, 0, Math.PI * 2);
@@ -171,6 +182,7 @@ function App() {
       ctx.fillStyle = "#7ed957";
       ctx.fillRect(0, groundY, WIDTH, 13);
       ctx.fillStyle = "#5fbf3d";
+
       for (let x = -20; x < WIDTH + 20; x += 28) {
         ctx.fillRect(x, groundY + 14, 14, 6);
       }
@@ -214,24 +226,32 @@ function App() {
 
         if (gameOver) {
           ctx.font = "700 22px system-ui, sans-serif";
-          ctx.fillText("Score: " + game.score + "  •  Best: " + best, WIDTH / 2, 310);
+          ctx.fillText(
+            "Score: " + game.score + "  •  Best: " + best,
+            WIDTH / 2,
+            310
+          );
         }
       }
     };
 
     const tick = (time) => {
-      const dt = Math.min((time - lastTimeRef.current) / 16.67 || 1, 2);
+      const delta = lastTimeRef.current
+        ? Math.min(time - lastTimeRef.current, 34)
+        : 16.67;
+      const dt = delta / 16.67;
       lastTimeRef.current = time;
 
       if (started && !gameOver && gameRef.current) {
         const game = gameRef.current;
+
         game.velocity += GRAVITY * dt;
         game.birdY += game.velocity * dt;
 
-        pipeTimerRef.current += time - (lastTimeRef.current - 16.67);
-        if (pipeTimerRef.current > PIPE_INTERVAL) {
+        pipeTimerRef.current += delta;
+        if (pipeTimerRef.current >= PIPE_INTERVAL) {
           game.pipes.push(createPipe());
-          pipeTimerRef.current = 0;
+          pipeTimerRef.current -= PIPE_INTERVAL;
         }
 
         game.pipes.forEach((pipe) => {
@@ -254,7 +274,8 @@ function App() {
 
         const hitBoundary = birdTop <= 0 || birdBottom >= groundY;
         const hitPipe = game.pipes.some((pipe) => {
-          const overlapsX = birdRight > pipe.x && birdLeft < pipe.x + PIPE_WIDTH;
+          const overlapsX =
+            birdRight > pipe.x && birdLeft < pipe.x + PIPE_WIDTH;
           const inGap = birdTop > pipe.top && birdBottom < pipe.top + PIPE_GAP;
           return overlapsX && !inGap;
         });
@@ -262,6 +283,7 @@ function App() {
         if (hitBoundary || hitPipe) {
           setGameOver(true);
           setStarted(false);
+
           const nextBest = Math.max(best, game.score);
           setBest(nextBest);
           localStorage.setItem("flappy-best", String(nextBest));
@@ -286,6 +308,7 @@ function App() {
             <p className="eyebrow">REACT GAME</p>
             <h1>Flappy Bird</h1>
           </div>
+
           <div className="score-box">
             <span>Best</span>
             <strong>{best}</strong>
@@ -301,7 +324,9 @@ function App() {
           <span>⌨️ Space / ↑</span>
         </div>
 
-        <div className="live-score">Current Score: <strong>{score}</strong></div>
+        <div className="live-score">
+          Current Score: <strong>{score}</strong>
+        </div>
       </section>
     </main>
   );
