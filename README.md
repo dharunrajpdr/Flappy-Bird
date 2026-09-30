@@ -25,6 +25,17 @@ The game includes smooth movement, gravity-based physics, randomly generated obs
 > 💡 **Built to practice:** JavaScript game logic, Canvas rendering, DOM events, animations, collision detection, and browser storage.
 
 ---
+## 🌐 Live Demo
+
+<div align="center">
+
+### 🎮 [PLAY FLAPPY BIRD](https://dharunrajpdr.github.io/Flappy-Bird/)
+
+</div>
+
+> If the live demo is unavailable, make sure GitHub Pages is enabled for the repository.
+
+---
 
 ## 🎯 Features
 
@@ -110,19 +121,6 @@ in any modern web browser.
 ✅ **No installation required.**
 
 ---
-
-## 🌐 Live Demo
-
-<div align="center">
-
-### 🎮 [PLAY FLAPPY BIRD](https://dharunrajpdr.github.io/Flappy-Bird/)
-
-</div>
-
-> If the live demo is unavailable, make sure GitHub Pages is enabled for the repository.
-
----
-
 ## 👨‍💻 Author
 
 ### Dharun Raj P
