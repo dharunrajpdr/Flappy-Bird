@@ -123,37 +123,6 @@ in any modern web browser.
 
 ---
 
-## 🧠 What I Learned
-
-Building this project helped me practice:
-
-- 🎯 Game loops using `requestAnimationFrame`
-- 🧮 Basic game physics and gravity
-- 💥 Rectangle-based collision detection
-- 🎲 Random obstacle generation
-- ⌨️ Keyboard and pointer event handling
-- 🖼️ Canvas drawing and animation
-- 💾 Browser data persistence with `localStorage`
-- 📱 Responsive frontend design
-- 🧩 Structuring a small JavaScript project without frameworks
-
----
-
-## 🔮 Future Improvements
-
-Some ideas for future versions:
-
-- 🔊 Sound effects and background music
-- 🌙 Day / Night themes
-- 🐦 Multiple bird skins
-- 📈 Difficulty levels
-- ⏸️ Pause / Resume
-- 🏅 Global leaderboard
-- 🎁 Power-ups
-- ✨ More advanced animations
-
----
-
 ## 👨‍💻 Author
 
 ### Dharun Raj P
