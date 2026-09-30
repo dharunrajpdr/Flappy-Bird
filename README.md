@@ -1,173 +1,59 @@
 # 🐦 Flappy Bird
 
-<div align="center">
+A simple **Flappy Bird-style game** built using **HTML, CSS, and JavaScript**.
 
-### 🎮 A Classic Arcade Game — Rebuilt with Pure Web Technologies
+## 🎮 Features
 
-**Flappy Bird** is a lightweight, responsive browser game built from scratch using **HTML5, CSS3, JavaScript, and Canvas**.
+- 🐦 Bird movement and gravity
+- 🚧 Random pipes
+- 💥 Collision detection
+- 🏆 Score and best score
+- 🔄 Restart option
+- 📱 Responsive design
+- 🎨 Canvas-based game
 
-No frameworks. No libraries. Just clean frontend code and game logic. 🚀
+## 🛠️ Technologies
 
-<br/>
-
-[🎮 Play Live](https://dharunrajpdr.github.io/Flappy-Bird/) • [📂 View Repository](https://github.com/dharunrajpdr/Flappy-Bird)
-
-</div>
-
----
-
-## ✨ Overview
-
-Fly the bird through the pipes without hitting them!
-
-The game includes smooth movement, gravity-based physics, randomly generated obstacles, collision detection, score tracking, and a persistent best score.
-
-> 💡 **Built to practice:** JavaScript game logic, Canvas rendering, DOM events, animations, collision detection, and browser storage.
-
----
-
-## 🎯 Features
-
-| Feature | Description |
-|---|---|
-| 🐦 **Bird Physics** | Gravity and flap movement for natural gameplay |
-| 🚧 **Random Pipes** | Pipes are generated with varying gap positions |
-| 💥 **Collision Detection** | Detects collisions with pipes and boundaries |
-| 🏆 **Score System** | Score increases as you pass pipes |
-| ⭐ **Best Score** | Best score is stored using `localStorage` |
-| 🎮 **Multiple Controls** | Keyboard, mouse, and touch support |
-| 🔄 **Restart System** | Quickly restart after game over |
-| 📱 **Responsive UI** | Works across desktop and mobile screens |
-| 🎨 **Canvas Rendering** | Game graphics are rendered directly on HTML Canvas |
-| ⚡ **Lightweight** | No React, Vite, npm packages, or external libraries |
-
----
+- HTML5
+- CSS3
+- JavaScript
+- Canvas API
+- LocalStorage
 
 ## 🕹️ Controls
 
-| Action | Keyboard | Mouse / Touch |
-|---|---|---|
-| 🪽 Flap | `Space` / `Arrow Up` | Click / Tap |
-| 🔄 Restart | `Space` / `Arrow Up` | Click / Tap |
-
----
-
-## 🛠️ Tech Stack
-
-<div align="center">
-
-**HTML5** • **CSS3** • **JavaScript** • **Canvas API** • **LocalStorage**
-
-</div>
-
-### 🔧 Technologies Used
-
-- **HTML5** — Game structure and Canvas element
-- **CSS3** — Layout, styling, animations, and responsive design
-- **JavaScript** — Game engine, physics, controls, scoring, and collision logic
-- **Canvas API** — Rendering the bird, pipes, background, ground, and score
-- **LocalStorage** — Saving the player's best score
-
----
+- **Space / Arrow Up** → Flap
+- **Mouse Click / Mobile Tap** → Flap
+- **Click / Tap** → Restart after game over
 
 ## 📂 Project Structure
 
 ```text
 Flappy-Bird/
-│
-├── 📄 index.html      # Game structure and Canvas
-├── 🎨 style.css       # UI and responsive styling
-├── ⚙️ script.js       # Game logic and rendering
-└── 📘 README.md       # Project documentation
+├── index.html
+├── style.css
+├── script.js
+└── README.md
 ```
 
----
+## 🚀 Run the Game
 
-## 🚀 Getting Started
-
-### 1️⃣ Clone the Repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/dharunrajpdr/Flappy-Bird.git
 ```
 
-### 2️⃣ Open the Project
-
-```bash
-cd Flappy-Bird
-```
-
-### 3️⃣ Run the Game
-
-Simply open:
-
-```text
-index.html
-```
-
-in any modern web browser.
-
-✅ **No installation required.**
-
----
+Then open `index.html` in your browser.
 
 ## 🌐 Live Demo
 
-<div align="center">
-
-### 🎮 [PLAY FLAPPY BIRD](https://dharunrajpdr.github.io/Flappy-Bird/)
-
-</div>
-
-> If the live demo is unavailable, make sure GitHub Pages is enabled for the repository.
-
----
-
-## 🧠 What I Learned
-
-Building this project helped me practice:
-
-- 🎯 Game loops using `requestAnimationFrame`
-- 🧮 Basic game physics and gravity
-- 💥 Rectangle-based collision detection
-- 🎲 Random obstacle generation
-- ⌨️ Keyboard and pointer event handling
-- 🖼️ Canvas drawing and animation
-- 💾 Browser data persistence with `localStorage`
-- 📱 Responsive frontend design
-- 🧩 Structuring a small JavaScript project without frameworks
-
----
-
-## 🔮 Future Improvements
-
-Some ideas for future versions:
-
-- 🔊 Sound effects and background music
-- 🌙 Day / Night themes
-- 🐦 Multiple bird skins
-- 📈 Difficulty levels
-- ⏸️ Pause / Resume
-- 🏅 Global leaderboard
-- 🎁 Power-ups
-- ✨ More advanced animations
-
----
+🎮 [Play Flappy Bird](https://dharunrajpdr.github.io/Flappy-Bird/)
 
 ## 👨‍💻 Author
 
-### Dharun Raj P
+**Dharun Raj P**
 
-💻 **GitHub:** [@dharunrajpdr](https://github.com/dharunrajpdr)
+GitHub: [@dharunrajpdr](https://github.com/dharunrajpdr)
 
-If you enjoyed the project, feel free to ⭐ **star the repository**!
-
----
-
-<div align="center">
-
-### 🐦 Flap • Dodge • Score • Repeat! 🎮
-
-Made with ❤️ using HTML, CSS & JavaScript.
-
-</div>
+⭐ If you like the project, consider giving it a star!
